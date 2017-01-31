@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170131165751) do
+ActiveRecord::Schema.define(version: 20170131190916) do
+
+  create_table "beers", force: :cascade do |t|
+    t.integer "brewery_id"
+    t.integer "category_id"
+    t.integer "style_id"
+    t.string  "name"
+    t.float   "abv"
+    t.float   "ibu"
+    t.float   "srm"
+    t.float   "upc"
+    t.string  "description"
+    t.index ["brewery_id"], name: "index_beers_on_brewery_id"
+    t.index ["category_id"], name: "index_beers_on_category_id"
+    t.index ["style_id"], name: "index_beers_on_style_id"
+  end
 
   create_table "breweries", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +41,27 @@ ActiveRecord::Schema.define(version: 20170131165751) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["code"], name: "index_breweries_on_code"
+  end
+
+  create_table "brewery_geocodes", force: :cascade do |t|
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "accuracy"
+    t.integer  "brewery_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brewery_id"], name: "index_brewery_geocodes_on_brewery_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.index ["name"], name: "index_categories_on_name"
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string  "name"
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_styles_on_category_id"
   end
 
 end

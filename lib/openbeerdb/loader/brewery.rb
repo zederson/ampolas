@@ -23,7 +23,7 @@ module Openbeerdb
               site:         line['website'],
               description:  line['descript']
             }
-            ::Brewery.new(values).save
+            ::Brewery.create(values)
           end
         end
       end

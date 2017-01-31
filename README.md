@@ -1,5 +1,9 @@
 # README
 
+## Download files to load app
+[Open Beer DB](http://openbeerdb.com/files/openbeerdb_csv.zip)
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
