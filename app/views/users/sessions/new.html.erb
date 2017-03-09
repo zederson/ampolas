@@ -1,0 +1,26 @@
+<div class="center">
+  <h2 class='header text-align'>Autenticação</h2>
+</div>
+
+<div class="row ">
+  <div class="col s12 m6 l6 offset-m3 offset-l3 center lighten-4  card-panel">
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: '') do |f| %>
+      <div class='input-field'>
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class='input-field'>
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: 'off' %>
+      </div>
+
+      <div class='row'>
+        <%= f.submit 'Entrar', class: 'btn' %>
+      </div>
+    <% end %>
+
+    <%= render 'devise/shared/links' %>
+  </div>
+</div>

@@ -4,11 +4,42 @@
     <title>Ampolas</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%# <%= render 'layouts/nav_bar' %1> %>
+      <%# <%= render 'layouts/menu' %1> %>
+    </header>
+
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+
+    <script>
+      $(function() {
+        Materialize.updateTextFields();
+      });
+
+      $('.button-collapse').sideNav({
+          menuWidth: 300,
+          edge: 'right',
+          closeOnClick: true,
+          draggable: true
+        }
+      );
+    </script>
+
+    <script type='text/javascript'>
+      <%= yield :javascript %>
+    </script>
+
   </body>
 </html>

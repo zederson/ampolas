@@ -1,0 +1,17 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Usuário
+      device: Dispositivo
+      category: Categoria
+      room: Sala
+      event: Agendamento
+    attributes:
+      user:
+        email: 'E-mail'
+        password: 'Senha'
+        password_confirmation: 'Confirmação de senha'
+        current_password: 'Senha atual'
+      room:
+        name: 'Nome'
+        people: 'Pessoas'
