@@ -1,1 +1,9 @@
-CERVEJA
+<h2 class="header">Cervejas</h2>
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <%= render(partial: 'beers/shared/card_beer', collection: @beers, as: :beer) || content_tag(:p, 'Nenhum Cerveja encontrada', class: 'chapter') %>
+    </div>
+  </div>
+</div>

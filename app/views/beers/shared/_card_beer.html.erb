@@ -1,0 +1,17 @@
+  <div class="col s12 m4 ">
+    <div class="card blue lighten-1 ">
+      <div class="card-content white-text" style="width:100%; background: rgba(0, 0, 0, 0.5);">
+        <%= beer.name %>
+        <br>
+        <%= beer.style.try(:name) || content_tag(:br) %>
+      </div>
+      <div class="card-action">
+        <small>abv:</small> <%= beer.abv %>
+        -
+        <small>ibu:</small> <%= beer.ibu %>
+
+        <br>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+<nav class="top-nav cyan lighten-2">
+  <div class="container">
+    <div class="nav-wrapper">
+      <%= link_to 'Ampolas', root_path, class: 'page-title' %>
+      <a data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+      <% if user_signed_in? %>
+        <ul class="right hide-on-med-and-down" >
+          <li> <%= link_to 'ALTERAR DADOS', edit_user_registration_path %> </li>
+          <li> <%= link_to 'SAIR', destroy_user_session_path, method: :delete %> </li>
+          <li> <a data-activates="slide-out" class="button-collapse" style="display: block"><i class="material-icons">more_vert</i></a> </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</nav>
